@@ -1,0 +1,4 @@
+from trkr.settings.base import *  # noqa
+
+SECRET_KEY = "01234567890123456789012345678901234567890123456789"
+DEBUG = True
