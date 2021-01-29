@@ -1,0 +1,22 @@
+name: Code Quality
+on: [push, pull_request]
+jobs:
+  code-quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Black
+        uses: lgeiger/black-action@master
+        with:
+          args: ". --check"
+      - uses: jamescurtin/isort-action@master
+      - name: isort
+        uses: olance/isort-action@v1.0.0
+        with:
+          args:  "**/*.py -c -v"
+      - name: PyLint
+        uses: cclauss/GitHub-Action-for-pylint@master
