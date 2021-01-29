@@ -22,6 +22,7 @@ poetry install
 Run migrations and create a superuser. By default, a sqlite3 database will be used. 
 ```shell script
 python manage.py migrate
+python manage.py loaddata categories
 python manage.py createsuperuser
 ```
 Run the project locally.
