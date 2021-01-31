@@ -13,10 +13,7 @@ jobs:
         uses: lgeiger/black-action@master
         with:
           args: ". --check"
-      - uses: jamescurtin/isort-action@master
       - name: isort
-        uses: olance/isort-action@v1.0.0
-        with:
-          args:  "**/*.py -c -v"
+        uses: jamescurtin/isort-action@master
       - name: PyLint
         uses: cclauss/GitHub-Action-for-pylint@master
