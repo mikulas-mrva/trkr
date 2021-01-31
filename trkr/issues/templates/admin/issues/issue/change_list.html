@@ -1,0 +1,13 @@
+{% extends 'admin/change_list.html' %}
+
+{% block result_list %}
+    <div style="text-align: left; padding: 10px">
+        <span>Average time spent: <b>{{ spent_time_average|default_if_none:"-" }}</b></span>
+        <span>Most time spent: <b>{{ spent_time_max|default_if_none:"-" }}</b></span>
+        <span>Least time spent: <b>{{ spent_time_min|default_if_none:"-" }}</b></span>
+    </div>
+
+
+    {{ block.super }}
+
+{% endblock %}

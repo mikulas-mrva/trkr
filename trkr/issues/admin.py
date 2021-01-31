@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.db.models import Avg, Max, Min
 from django.http import HttpRequest
 
 from .models import Category, Issue
@@ -30,6 +31,21 @@ class IssueAdmin(admin.ModelAdmin):
             # pre-fill reporter with current user value
             form.base_fields["reporter"].initial = request.user
         return form
+
+    def changelist_view(self, request, extra_context=None):
+        aggregates = Issue.objects.aggregate(
+            Avg('spent_time'),
+            Max('spent_time'),
+            Min('spent_time')
+        )
+        context = {
+            'spent_time_average': aggregates['spent_time__avg'],
+            'spent_time_max': aggregates['spent_time__max'],
+            'spent_time_min': aggregates['spent_time__min'],
+        }
+        if extra_context:
+            context.update(extra_context)
+        return super().changelist_view(request, context)
 
 
 admin.site.register(Category, CategoryAdmin)
