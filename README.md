@@ -23,7 +23,7 @@ Run migrations and create a superuser. By default, a sqlite3 database will be us
 ```shell script
 python manage.py migrate
 python manage.py loaddata categories
-python manage.py createsuperuser
+python manage.py createsuperuser --name admin --email admin@example.com
 ```
 Run the project locally.
 ```shell script

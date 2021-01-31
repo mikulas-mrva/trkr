@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=50, primary_key=True)
     is_archived = models.BooleanField(default=False)
 
     class Meta:
@@ -60,13 +60,14 @@ class Issue(models.Model):
         default=STATUS_BACKLOG,
     )
     estimated_time = models.DurationField(
-        default=timedelta(),
-        null=False,
+        blank=True,
+        null=True,
     )
     spent_time = models.DurationField(
-        default=timedelta(),
-        null=False,
+        blank=True,
+        null=True,
     )
+
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     modified_at = models.DateTimeField(auto_now=True, editable=False)
 

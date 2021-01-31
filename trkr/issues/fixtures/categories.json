@@ -1,7 +1,6 @@
 [
   {
     "model": "issues.category",
-    "pk": 1,
     "fields": {
       "title": "Bug",
       "is_archived": false
@@ -9,7 +8,6 @@
   },
   {
     "model": "issues.category",
-    "pk": 2,
     "fields": {
       "title": "Feature",
       "is_archived": false
@@ -17,7 +15,6 @@
   },
   {
     "model": "issues.category",
-    "pk": 3,
     "fields": {
       "title": "Documentation",
       "is_archived": false
