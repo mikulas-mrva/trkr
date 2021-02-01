@@ -1,0 +1,61 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "...",
+      "last_login": "2021-01-31T13:18:30.871Z",
+      "is_superuser": true,
+      "username": "superuser",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-01-31T13:18:04.851Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$nyQWfkaW437b$72l2c/7mJ0rlcR6rJwKJwkcXistOkpbERGkykeFJhJ8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "staff_user",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-02-01T17:10:45.575Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "issues.category",
+    "fields": {
+      "title": "Bug",
+      "is_archived": false
+    }
+  },
+  {
+    "model": "issues.issue",
+    "pk": 1,
+    "fields": {
+      "title": "Fixture Issue",
+      "description": "Description",
+      "category": "Bug",
+      "reporter": 1,
+      "assignee": 2,
+      "status": "B",
+      "estimated_time": null,
+      "spent_time": "01:00:00",
+      "created_at": "2021-01-31T13:18:57.662Z",
+      "modified_at": "2021-01-31T22:28:35.648Z"
+    }
+  }
+]
