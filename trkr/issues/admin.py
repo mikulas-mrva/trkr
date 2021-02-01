@@ -34,14 +34,12 @@ class IssueAdmin(admin.ModelAdmin):
 
     def changelist_view(self, request, extra_context=None):
         aggregates = Issue.objects.aggregate(
-            Avg('spent_time'),
-            Max('spent_time'),
-            Min('spent_time')
+            Avg("spent_time"), Max("spent_time"), Min("spent_time")
         )
         context = {
-            'spent_time_average': aggregates['spent_time__avg'],
-            'spent_time_max': aggregates['spent_time__max'],
-            'spent_time_min': aggregates['spent_time__min'],
+            "spent_time_average": aggregates["spent_time__avg"],
+            "spent_time_max": aggregates["spent_time__max"],
+            "spent_time_min": aggregates["spent_time__min"],
         }
         if extra_context:
             context.update(extra_context)

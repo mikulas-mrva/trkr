@@ -4,10 +4,10 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import (
-    force_authenticate,
+    APIClient,
     APIRequestFactory,
     APITestCase,
-    APIClient,
+    force_authenticate,
 )
 
 from ..models import Issue

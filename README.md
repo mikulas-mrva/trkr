@@ -21,13 +21,14 @@ poetry install
 
 Run migrations and create a superuser. By default, a sqlite3 database will be used. 
 ```shell script
+export DJANGO_SETTINGS_MODULE=trkr.settings.dev
 python manage.py migrate
 python manage.py loaddata categories
-python manage.py createsuperuser --name admin --email admin@example.com
+python manage.py createsuperuser --username admin --email admin@example.com
 ```
 Run the project locally.
 ```shell script
-DJANGO_SETTINGS_MODULE=trkr.settings.dev python3 manage.py runserver 8000
+python manage.py runserver 8000
 ```
 
 Trkr comes with a set of linters and formatters in dev requirements, please use them before committing any changes.
@@ -36,22 +37,3 @@ black .
 isort .
 pylint *.py
 ```
-
-## Planned features
-* issues model
-  * title
-  * description
-  * category
-  * reporter
-  * assignee
-  * status
-  * estimated time
-  * spent time
-* category model
-  * editable
-  * comes with defaults
-* test coverage
-* user roles
-  * superuser
-  * staff (read-only)
-* REST API
