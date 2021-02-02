@@ -9,7 +9,7 @@ from ..models import Category, Issue
 
 class CategoryTestCase(TestCase):
     """
-    Test that categories can be created.
+    Categories can be created.
     This is assumed to work in Issue test, so it seems sensible to cover this by separate tests as well.
     """
 
@@ -46,7 +46,7 @@ class IssueTestCase(TestCase):
         )
 
     def test_create_basic(self):
-        """Test that Issues can be created with just the necessary information"""
+        """Issues can be created with just the necessary information"""
         bug_category = Category.objects.get(title="Bug")
         user = get_user_model().objects.first()
 
@@ -67,7 +67,7 @@ class IssueTestCase(TestCase):
         self.assertIsNone(issue.spent_time)
 
     def test_create_full(self):
-        """Test that Issues can be created with all params available"""
+        """Issues can be created with all params available"""
         bug_category = Category.objects.get(title="Bug")
 
         first_user = get_user_model().objects.first()

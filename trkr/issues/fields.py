@@ -3,7 +3,7 @@ from rest_framework import serializers
 
 
 class UserRelatedAPIField(serializers.RelatedField):
-    """Serializer field that displays usernames instead of """
+    """Serializer field that displays usernames instead of user pks"""
 
     queryset = get_user_model().objects.all()
 
@@ -15,6 +15,7 @@ class UserRelatedAPIField(serializers.RelatedField):
 
 
 class IssueStatusChoiceField(serializers.ChoiceField):
+    """Serializer field that displays full name of issues status instead of one character code"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.reverse_choices = {name: code for (code, name) in self.choices.items()}
