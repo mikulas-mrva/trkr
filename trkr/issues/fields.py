@@ -16,6 +16,7 @@ class UserRelatedAPIField(serializers.RelatedField):
 
 class IssueStatusChoiceField(serializers.ChoiceField):
     """Serializer field that displays full name of issues status instead of one character code"""
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.reverse_choices = {name: code for (code, name) in self.choices.items()}

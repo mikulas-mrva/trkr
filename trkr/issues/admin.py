@@ -10,10 +10,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class IssueAdmin(admin.ModelAdmin):
-    """Issue Admin - visible and editable by staff
-    TODO archived issue is not editable
-    TODO maybe create "issue admin" user group so some users can edit and create issues without
-    """
+    """Issue Admin - visible and editable by staff"""
 
     # fields =
     list_display = ["pk", "category", "title", "status", "reporter", "assignee"]
